@@ -1,7 +1,9 @@
 #include "Image.h"
+#include "ImageLoader\ImageLoaderManager.h"
 #include <iostream>
 
 using namespace GEI;
+using namespace Loader;
 
 Image::Image()
 {
@@ -19,7 +21,7 @@ Image::~Image()
 
 bool Image::Save()
 {
-	return false;
+	return ImageLoaderManager::Instance()->Save(this);
 }
 
 bool Image::SaveAs(char* fileName)
@@ -59,7 +61,7 @@ bool Image::SaveAs(char* fileName, char* filePath, Filetype fileType)
 ////////////////////////////////
 bool Image::Load()
 {
-	return false;
+	return ImageLoaderManager::Instance()->Load(this);
 }
 
 bool Image::Load(char* fileName, char* filePath)
