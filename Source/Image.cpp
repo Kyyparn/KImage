@@ -24,34 +24,17 @@ bool Image::Save()
 	return ImageLoaderManager::Instance()->Save(this);
 }
 
-bool Image::SaveAs(char* fileName)
+bool Image::SaveAs(char* filePath, Filetype fileType)
 {
-	this->fileName = fileName;
-	
-	return Save();
-}
-
-bool Image::SaveAs(char* fileName, Filetype fileType)
-{
-	this->fileName = fileName;
-	this->fileType = fileType;
-
-	return Save();
-}
-
-bool Image::SaveAs(char* fileName, char* filePath)
-{
-	this->fileName = fileName;
-	this->filePath = filePath;
-
-	return Save();
-}
-
-bool Image::SaveAs(char* fileName, char* filePath, Filetype fileType)
-{
-	this->fileName = fileName;
 	this->filePath = filePath;
 	this->fileType = fileType;
+
+	return Save();
+}
+
+bool Image::SaveAs(char* filePath)
+{
+	this->filePath = filePath;
 
 	return Save();
 }
@@ -64,9 +47,8 @@ bool Image::Load()
 	return ImageLoaderManager::Instance()->Load(this);
 }
 
-bool Image::Load(char* fileName, char* filePath)
+bool Image::Load(char* filePath)
 {
-	this->fileName = fileName;
 	this->filePath = filePath;
 
 	//TODO: Parse filename to get filetype
@@ -76,9 +58,8 @@ bool Image::Load(char* fileName, char* filePath)
 	Load();
 }
 
-bool Image::Load(char* fileName, char* filePath, Filetype fileType)
+bool Image::Load(char* filePath, Filetype fileType)
 {
-	this->fileName = fileName;
 	this->filePath = filePath;
 	this->fileType = fileType;
 
@@ -88,10 +69,6 @@ bool Image::Load(char* fileName, char* filePath, Filetype fileType)
 //////////////////////////////////
 /////	 GET AND SET		/////
 ////////////////////////////////
-char* Image::GetFileName()
-{
-	return this->fileName;
-}
 
 char* Image::GetFilePath()
 {
@@ -106,11 +83,6 @@ Filetype Image::GetFileType()
 char* Image::GetData()
 {
 	return data;
-}
-
-void Image::SetFileName(char* fileName)
-{
-	this->fileName = fileName;
 }
 
 void Image::SetFilePath(char* filePath)

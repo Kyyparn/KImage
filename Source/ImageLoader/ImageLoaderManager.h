@@ -6,15 +6,18 @@ namespace GEI
 
 	namespace Loader
 	{
+		class BMPImageLoader;
+
 		class ImageLoaderManager
 		{
-		protected:
-			static ImageLoaderManager* _instance;
-		public:
-			static ImageLoaderManager* Instance();
-
+		private:
+			static ImageLoaderManager* m_instance;
 			ImageLoaderManager();
 			~ImageLoaderManager();
+
+			BMPImageLoader* bmpLoader;
+		public:
+			static ImageLoaderManager* Instance();
 
 			bool Save(GEI::Image* image);
 			bool Load(GEI::Image* image);
