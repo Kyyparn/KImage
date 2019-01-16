@@ -15,6 +15,7 @@ namespace GEI
 		protected:
 			virtual bool IsCorrectFileType(char* data, char* fileTypeIdentifier, int numberOfBytes);
 			virtual char* LoadFileData(Image* image, int size);
+			virtual bool SaveDataToFile(Image* image, char* data, int size);
 		};
 	}
 }

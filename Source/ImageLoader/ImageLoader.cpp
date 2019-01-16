@@ -31,8 +31,8 @@ char* ImageLoader::LoadFileData(Image* image, int size)
 		if (result != size)
 		{
 			delete[] data;
-			data = 0;
-		} //TODO: Nicer solution
+			data = NULL;
+		}
 
 		fclose(file);
 	}
@@ -40,4 +40,22 @@ char* ImageLoader::LoadFileData(Image* image, int size)
 	if (data == NULL) printf("Failed to open file \n");
 
 	return data;
+}
+
+bool ImageLoader::SaveDataToFile(Image* image, char* data, int size)
+{
+	FILE* file = fopen(image->GetFilePath(), "wb");
+
+	if (file != NULL)
+	{
+		fwrite(data, 1, size, file);
+
+		fclose(file);
+	}
+	else
+	{
+		return false;
+	}
+
+	return true;
 }

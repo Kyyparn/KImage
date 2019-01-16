@@ -1,6 +1,9 @@
 #pragma once
 #include "ImageLoader.h"
 
+#define BMPHeaderSize 14
+#define DIBHeaderSize 40
+
 namespace GEI
 {
 	class Image;

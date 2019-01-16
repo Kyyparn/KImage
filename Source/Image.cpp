@@ -85,6 +85,11 @@ char* Image::GetData()
 	return data;
 }
 
+unsigned int Image::GetDataSize()
+{
+	return dataSize;
+}
+
 void Image::SetFilePath(char* filePath)
 {
 	this->filePath = filePath;
@@ -98,4 +103,31 @@ void Image::SetFileType(Filetype fileType)
 void Image::SetData(char* data)
 {
 	this->data = data;
+}
+
+void Image::SetData(char* data, unsigned int dataSize)
+{
+	this->data = data;
+	this->dataSize = dataSize;
+}
+
+//Image dimension
+unsigned int Image::GetImageWidth()
+{
+	return imageWidth;
+}
+
+unsigned int Image::GetImageHeight()
+{
+	return imageHeight;
+}
+
+void Image::SetImageWidth(unsigned int imageWidth)
+{
+	this->imageWidth = imageWidth;
+}
+
+void Image::SetImageHeight(unsigned int imageHeight)
+{
+	this->imageHeight = imageHeight;
 }

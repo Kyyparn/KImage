@@ -8,7 +8,7 @@ SET(CMAKE_CONFIGURATION_TYPES Debug Release CACHE TYPE INTERNAL FORCE )
 SET_PROPERTY(GLOBAL PROPERTY USE_FOLDERS ON)
 
 #Project name
-project("GEI-lib")
+project("KImage")
 
 #Add subdirectory
 add_subdirectory (Source)

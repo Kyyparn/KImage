@@ -35,11 +35,8 @@ bool ImageLoaderManager::Save(Image* image)
 		break;
 
 	case Filetype::NOTDEFINED:
-		//TODO: Throw error;
-		return false;
-
 	default:
-		//TODO: Throw error
+		throw "Undefined file type";
 		return false;
 	}
 

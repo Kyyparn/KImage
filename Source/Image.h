@@ -10,6 +10,10 @@ namespace GEI
 		Filetype fileType;
 		
 		char* data;
+		unsigned int dataSize;
+
+		unsigned int imageWidth;
+		unsigned int imageHeight;
 	public:
 		Image();
 		~Image();
@@ -28,9 +32,15 @@ namespace GEI
 		char* GetFilePath();
 		Filetype GetFileType();
 		char* GetData();
+		unsigned int GetDataSize();
+		unsigned int GetImageWidth();
+		unsigned int GetImageHeight();
 
 		void SetFilePath(char* filePath);
 		void SetFileType(Filetype fileType);
 		void SetData(char* data);
+		void SetData(char* data, unsigned int dataSize);
+		void SetImageWidth(unsigned int imageWidth);
+		void SetImageHeight(unsigned int imageHeight);
 	};
 }
