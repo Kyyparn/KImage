@@ -11,5 +11,5 @@ SET_PROPERTY(GLOBAL PROPERTY USE_FOLDERS ON)
 project("KImage")
 
 #Add subdirectory
-add_subdirectory (Source)
+add_subdirectory (src)
 
