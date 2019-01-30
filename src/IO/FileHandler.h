@@ -1,12 +1,18 @@
 #pragma once
 
-#include "../FileData.h"
+#include "FileData.h"
 
-class FileHandler
+namespace KImage
 {
-public:
-	FileHandler();
+	namespace IO
+	{
+		class FileHandler
+		{
+		public:
+			FileHandler();
 
-	void WriteToFile(char* path, const GEI::FileData& fileData);
-	GEI::FileData ReadFromFile(char* path);
-};
+			void WriteToFile(char* path, const KImage::FileData& fileData);
+			KImage::FileData ReadFromFile(char* path);
+		};
+	}
+}

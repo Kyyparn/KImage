@@ -1,6 +1,6 @@
 #include "ImageData.h"
 
-using namespace GEI;
+using namespace KImage;
 
 ImageData::ImageData(char* data, unsigned int width, unsigned int height)
 {

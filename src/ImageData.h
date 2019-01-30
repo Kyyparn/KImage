@@ -1,6 +1,6 @@
 #pragma once
 
-namespace GEI
+namespace KImage
 {
 	class ImageData
 	{

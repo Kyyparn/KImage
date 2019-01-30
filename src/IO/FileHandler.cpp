@@ -2,7 +2,8 @@
 #include <stdio.h>
 #include <fstream>
 
-using namespace GEI;
+using namespace KImage;
+using namespace KImage::IO;
 
 void FileHandler::WriteToFile(char* path, const FileData& fileData) 
 {

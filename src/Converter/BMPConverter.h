@@ -1,11 +1,17 @@
 #pragma once
 
-#include "../ImageData.h";
-#include "../FileData.h";
+#include "ImageData.h";
+#include "FileData.h";
 
-class BMPConverter
+namespace KImage
 {
-public:
-	static GEI::ImageData ConvertToImageData(const GEI::FileData& fileData);
-	static GEI::FileData ConvertToFileData(const GEI::ImageData& imageData);
-};
+	namespace Converters
+	{
+		class BMPConverter
+		{
+		public:
+			static ImageData ConvertToImageData(const FileData& fileData);
+			static FileData ConvertToFileData(const ImageData& imageData);
+		};
+	}
+}

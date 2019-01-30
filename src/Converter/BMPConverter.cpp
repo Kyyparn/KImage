@@ -1,12 +1,12 @@
 #include "BMPConverter.h"
 
-#include "../ImageData.h"
-#include "../FileData.h"
+#include "ImageData.h"
+#include "FileData.h"
 
-//#include <stdio.h>
 #include <string.h>
 
-using namespace GEI;
+using namespace KImage::Converters;
+using namespace KImage;
 
 ImageData BMPConverter::ConvertToImageData(const FileData& fileData)
 {
